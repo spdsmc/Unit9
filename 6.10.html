@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6.10</title>
+    <script>
+        function checkFields() {
+            var username = document.getElementById("username").value;
+            username = username.trim();
+            var password = document.getElementById("password").value;
+            password = password.trim();
+            var retypePassword = document.getElementById("retypePassword").value;
+            retypePassword = retypePassword.trim();
+
+            if( (username.length > 0) && (password.length > 0) && (retypePassword.length > 0) && (password === retypePassword)) {
+                document.getElementById("submitButton").disabled = false;
+            }else {
+                document.getElementById("submitButton").disabled = true;
+            };
+         };
+    </script>
+</head>
+
+<body>
+    <h1>Account Sign-up</h1>
+    <form id="accountSignUpForm" action="">
+        <label>First name: <input type="text" id="firstName"></label>
+        <br>&nbsp;<br>
+        <label>Last name: <input type="text" id="lastName"></label>
+        <br>&nbsp;<br>
+        <label><span style="color:red">*&nbsp;</span>Username: <input type="text" id="username" onkeyup='checkFields()'></label>
+        <br>&nbsp;<br>
+        <label>Email: <input type="text" id="email"></label>
+        <br>&nbsp;<br>
+        <label><span style="color:red">*&nbsp;</span>Password: <input type="password" id="password" onkeyup='checkFields()'></label>
+        <br>&nbsp;<br>
+        <label><span style="color:red">*&nbsp;</span>Retype Password: <input type="password" id="retypePassword" onkeyup='checkFields()' ></label>
+        <br>&nbsp;<br>
+        <input type="submit" id="submitButton" value="Submit" disabled>
+    </form>
+    <p><span style="color:red">*&nbsp;</span>Required field</p>
+    </body>
+</html>

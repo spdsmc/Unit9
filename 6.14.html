@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6.14</title>
+</head>
+<body>
+    <h1>User Profile Page</h1>
+
+    <label>Student ID: <input type="text" id="studentID" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="studentIDHelp" style="color:#7B68EE">Please enter your student ID.</span>
+    <br>&nbsp;<br>
+    <label>Last name: <input type="text" id="lastName" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="lastNameHelp" style="color:#7B68EE">Please enter your last name.</span>
+    <br>&nbsp;<br>
+    <label>First name: <input type="text" id="firstName" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="firstNameHelp" style="color:#7B68EE">Please enter your first name.</span>
+    <br>&nbsp;<br>
+    <label>Date of Birth: <input type="text" id="dateOfBirth" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="dateOfBirthHelp" style="color:#7B68EE">Please enter your date of birth.</span>
+    <br>&nbsp;<br>
+    <label>Gender: <input type="text" id="gender" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="genderHelp" style="color:#7B68EE">Please enter your gender.</span>
+    <br>&nbsp;<br>
+    <label>Email: <input type="text" id="email" onfocus="showHelp(id)" onblur="hideHelp(id)"></label>
+    <span id="emailHelp" style="color:#7B68EE">Please enter your email.</span>
+    <br>&nbsp;<br>
+
+    <script>
+        var help = {"studentID": "studentIDHelp", "lastName": "lastNameHelp", "firstName": "firstNameHelp", "dateOfBirth": "dateOfBirthHelp", "gender": "genderHelp", "email": "emailHelp"};
+
+        var showHelp = function (id) {
+            document.getElementById(help[id]).style.display = "initial";
+        };
+
+        var hideHelp = function (id) {
+            document.getElementById(help[id]).style.display = "none";
+        };
+
+        for (var i = 0; i < Object.keys(help).length; i ++) {
+            hideHelp(Object.keys(help)[i]);
+        };
+    </script>
+</body>
+</html>
